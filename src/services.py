@@ -1,7 +1,7 @@
 import json
 import logging
-from collections import Counter
-from typing import List, Dict, Any
+
+from typing import Any, Dict, List
 
 logger = logging.getLogger(__name__)
 
@@ -17,7 +17,7 @@ def cashback_categories(data: List[Dict[str, Any]], year: int, month: int) -> st
     Returns:
         JSON с суммами кешбэка по категориям.
     """
-    cashback_dict = {}
+    cashback_dict: dict[str, float] = {}
     for t in data:
         # Проверяем, что дата операции совпадает с нужным годом и месяцем
         # Формат даты в транзакциях: 'YYYY-MM-DD' (строка)
